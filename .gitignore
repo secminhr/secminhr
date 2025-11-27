@@ -1,3 +1,4 @@
 /public
 draft
+!/content/categories/draft
 .hugo_build.lock
