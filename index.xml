@@ -1,8 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Draft Stack</title><link>https://secminhr.github.io/secminhr/</link><description>Recent content on My Draft Stack</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://secminhr.github.io/secminhr/index.xml" rel="self" type="application/rss+xml"/><item><title>正式文章示例</title><link>https://secminhr.github.io/secminhr/posts/001-post-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://secminhr.github.io/secminhr/posts/001-post-example/</guid><description>這是示範的正式文章，會出現在首頁的 &amp;ldquo;posts&amp;rdquo; 區塊。
-區塊公式：
-$$ \int_0^1 x^2 dx = \tfrac{1}{3} $$
-程式碼展示：
-func main() { fmt.Println(&amp;#34;Hello world&amp;#34;) }</description></item><item><title>草稿示例 — 隨便記錄</title><link>https://secminhr.github.io/secminhr/posts/000-draft-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://secminhr.github.io/secminhr/posts/000-draft-example/</guid><description>這是一篇示範草稿。你可以直接在本地新增 .md，不需加任何欄位，預設會被視為草稿（draft）。
-$$ E = mc^2 $$
-附圖範例：
-由 gpt 生成</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>My Draft Stack</title><link>https://secminhr.github.io/secminhr/</link><description>Recent content on My Draft Stack</description><generator>Hugo -- 0.146.0</generator><language>en-us</language><atom:link href="https://secminhr.github.io/secminhr/index.xml" rel="self" type="application/rss+xml"/><item><title>正式文章示例</title><link>https://secminhr.github.io/secminhr/posts/001-post-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://secminhr.github.io/secminhr/posts/001-post-example/</guid><description>&lt;p>這是示範的正式文章，會出現在首頁的 &amp;ldquo;posts&amp;rdquo; 區塊。&lt;/p>
+&lt;p>區塊公式：&lt;/p>
+&lt;p>$$
+\int_0^1 x^2 dx = \tfrac{1}{3}
+$$&lt;/p>
+&lt;p>程式碼展示：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello world&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>草稿示例 — 隨便記錄</title><link>https://secminhr.github.io/secminhr/posts/000-draft-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://secminhr.github.io/secminhr/posts/000-draft-example/</guid><description>&lt;p>這是一篇示範草稿。你可以直接在本地新增 &lt;code>.md&lt;/code>，不需加任何欄位，預設會被視為草稿（draft）。&lt;/p>
+&lt;p>$$
+E = mc^2
+$$&lt;/p>
+&lt;p>附圖範例：&lt;/p>
+&lt;p>&lt;img alt="sample" loading="lazy" src="sample.svg">&lt;/p>
+&lt;p>由 gpt 生成&lt;/p></description></item></channel></rss>
