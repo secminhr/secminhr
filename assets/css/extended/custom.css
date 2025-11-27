@@ -1,0 +1,57 @@
+/* 1. 調整 Home » Tags (麵包屑) 與標題的距離 */
+.breadcrumbs {
+    margin-bottom: 24px; /* 預設比較小，這裡加寬間距 */
+}
+
+/* 2. 調整 Menu 選單按鈕文字與底線的距離 */
+.header #menu li a span {
+    /* 增加 padding-bottom 會把 border-bottom (底線) 往下推 */
+    padding-bottom: 6px; 
+}
+
+.paginav a {
+    /* 外觀設定 */
+    padding-top: 20px;    
+    padding-bottom: 20px;
+    border-radius: 8px;
+
+    /* 排版核心：使用 Flex Column 取代 <br> */
+    display: flex;
+    flex-direction: column; /* 讓子元素垂直排列 */
+    justify-content: center; /* 內容垂直置中 */
+    
+    /* 修正：預設讓內容靠左對齊，而不是拉伸 (stretch) */
+    /* 這能解決 prev 按鈕底線過長的問題 */
+    align-items: flex-start; 
+
+    /* 確保文字繼承對齊方式 (讓 Next 按鈕可以靠右) */
+    text-align: inherit; 
+}
+
+/* 移除原本的換行標籤，因為我們已經用 flex-direction: column 了 */
+.paginav a br {
+    display: none;
+}
+
+/* 4. 調整 < PREV (標籤) */
+.paginav .title {
+    display: block;
+    
+    /* 這裡控制「標籤」與「標題」的距離，原本很大，現在設小一點 */
+    margin-bottom: 0px; 
+}
+.paginav span {
+    /* 重設行高，避免文字本身自帶太多留白導致偏移 */
+    line-height: 1.3;
+}
+
+/* 修正：針對「下一篇」按鈕，確保內容靠右對齊 */
+.paginav .next {
+    align-items: flex-end; /* 強制 Flex 子元素靠右 */
+}
+/* (選用) 如果你覺得選單整個太貼近上方，也可以稍微增加上面的留白 */
+/*
+.header .menu {
+    margin-top: 5px;
+}
+*/
