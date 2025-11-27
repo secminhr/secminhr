@@ -5,11 +5,10 @@ theme = "papermod"
 
 # Frontmatter defaults: content in content/posts/ will default to draft = true
 [frontmatter]
-  [frontmatter.defaults]
-    [[frontmatter.defaults]]
-      where = "section"
-      section = "posts"
-      values = { draft = true }
+  [[frontmatter.defaults]]
+    where = "section"
+    section = "posts"
+    values = { draft = true }
 
 [params]
   author = "secminhr"
