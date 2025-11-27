@@ -1,12 +1,30 @@
-
-baseURL = "/"
+baseURL = "https://secminhr.github.io/secminhr"
 languageCode = "en-us"
 title = "My Draft Stack"
 theme = "papermod"
 
+# Frontmatter defaults: content in content/posts/ will default to draft = true
+[frontmatter]
+  [frontmatter.defaults]
+    [[frontmatter.defaults]]
+      where = "section"
+      section = "posts"
+      values = { draft = true }
+
 [params]
-  defaultStatus = "note"
+  author = "secminhr"
+  description = "Public notebook of drafts and posts"
+  pager = true
+  search = true
+  math = true
 
 [params.math]
   enable = true
   use = "katex"
+
+[taxonomies]
+  tag = "tags"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true

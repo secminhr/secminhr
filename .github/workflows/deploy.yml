@@ -1,4 +1,3 @@
-
 name: Deploy Hugo site
 
 on:
@@ -10,12 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: peaceiris/actions-hugo@v3
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '0.124.1'
           extended: true
+
       - name: Build
-        run: hugo --minify
+        # Use -D to include drafts in the public output (公開所有內容)
+        run: hugo -D --minify
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

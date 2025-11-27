@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <article>
+    <h1 style="margin-bottom:0.2rem;">{{ .Title }}</h1>
+    <div style="color:#666; margin-bottom:1rem;">
+      {{ if .Draft }}<em>Draft</em>{{ else }}<em>Published</em>{{ end }}
+      • {{ .Date.Format "2006-01-02" }}
+    </div>
+
+    {{ with .Params.tags }}
+      <p>Tags: {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="/tags/{{ $t | urlize }}">{{ $t }}</a>{{ end }}</p>
+    {{ end }}
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}
