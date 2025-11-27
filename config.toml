@@ -28,7 +28,6 @@ theme = "papermod"
   description = "Public notebook of drafts and posts"
   pager = true
   search = true
-  math = true
 
   [params.math]
     enable = true
