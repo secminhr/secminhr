@@ -1,14 +1,28 @@
-baseURL = "https://secminhr.github.io/secminhr"
+# ======================================================
+# Hugo site configuration - secminhr.github.io/secminhr
+# PaperMod theme, public notebook for drafts & posts
+# ======================================================
+
+baseURL = "https://secminhr.github.io/secminhr/"
 languageCode = "en-us"
 title = "My Draft Stack"
 theme = "papermod"
 
-# Frontmatter defaults: content in content/posts/ will default to draft = true
+# -----------------------------
+# Frontmatter defaults
+# -----------------------------
+# All content in content/posts/ defaults to draft = true
 [frontmatter]
+
   [[frontmatter.defaults]]
     where.section = "posts"
-    values = { draft = true } 
 
+    [frontmatter.defaults.values]
+      draft = true
+
+# -----------------------------
+# Site params
+# -----------------------------
 [params]
   author = "secminhr"
   description = "Public notebook of drafts and posts"
@@ -16,13 +30,19 @@ theme = "papermod"
   search = true
   math = true
 
-[params.math]
-  enable = true
-  use = "katex"
+  [params.math]
+    enable = true
+    use = "katex"
 
+# -----------------------------
+# Taxonomies
+# -----------------------------
 [taxonomies]
   tag = "tags"
 
+# -----------------------------
+# Markup options
+# -----------------------------
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
