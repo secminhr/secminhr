@@ -1,0 +1,12 @@
+
+baseURL = "/"
+languageCode = "en-us"
+title = "My Draft Stack"
+theme = "papermod"
+
+[params]
+  defaultStatus = "note"
+
+[params.math]
+  enable = true
+  use = "katex"
