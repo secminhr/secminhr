@@ -1,0 +1,42 @@
+{{- $scratch := newScratch }}
+
+{{- /* 1. 顯示日期 */ -}}
+{{- if not .Date.IsZero -}}
+{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date.Format (default "January 2, 2006" .Site.Params.DateFormat)))) }}
+{{- end }}
+
+{{- /* 2. 顯示預估閱讀時間 (如果在 config 有開啟 ShowReadingTime) */ -}}
+{{- if (.Param "ShowReadingTime") -}}
+{{- $scratch.Add "meta" (slice (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime))) }}
+{{- end }}
+
+{{- /* 3. 顯示字數 (如果在 config 有開啟 ShowWordCount) */ -}}
+{{- if (.Param "ShowWordCount") -}}
+{{- $scratch.Add "meta" (slice (i18n "words" .WordCount | default (printf "%d words" .WordCount))) }}
+{{- end }}
+
+{{- /* 4. 區塊名稱 */ -}}
+{{- if not (in .Site.Params.mainSections .Section) -}}
+{{- $scratch.Add "meta" (slice .Section) }}
+{{- end }}
+
+{{- /* 5. 編輯按鈕 (相對路徑版) */ -}}
+{{- /* 應使用者要求，移除 IsServer 檢查，讓正式站也能顯示編輯按鈕 */ -}}
+{{- if .File -}}
+    
+    {{- /* 直接使用 Hugo 的相對檔案路徑 (例如 content/posts/abc.md) */ -}}
+    {{- $relPath := .File.LogicalName -}}
+    
+    {{- /* 呼叫捷徑，只傳送相對路徑 */ -}}
+    {{- $shortcutUrl := printf "shortcuts://run-shortcut?name=DraftLink&input=text&text=%s" $relPath -}}
+    
+    {{- /* 生成按鈕 */ -}}
+    {{- $editBtn := printf "<a href='%s' class='post-meta-edit' title='Edit this post'>Edit</a>" $shortcutUrl -}}
+    
+    {{- $scratch.Add "meta" (slice $editBtn) }}
+{{- end -}}
+
+{{- /* 6. 最終輸出 */ -}}
+{{- with ($scratch.Get "meta") }}
+{{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
+{{- end -}}
