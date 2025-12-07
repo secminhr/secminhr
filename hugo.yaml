@@ -17,6 +17,20 @@ markup:
   goldmark:
     renderer:
       unsafe: true # 允許在 markdown 中使用 HTML
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - - $$
+              - $$
+            - - \[
+              - \]
+          inline:
+            - - $
+              - $
+            - - \(
+              - \)
 
 # 網站參數
 params:
