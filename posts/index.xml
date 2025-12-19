@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Drafts</title><link>https://secminhr.github.io/secminhr/posts/</link><description>Recent content in Posts on Drafts</description><generator>Hugo -- 0.146.0</generator><language>zh-tw</language><lastBuildDate>Tue, 02 Dec 2025 01:11:37 +0800</lastBuildDate><atom:link href="https://secminhr.github.io/secminhr/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Validity of Binary Search in Leetcode 2141</title><link>https://secminhr.github.io/secminhr/posts/2025-12-02-0111/</link><pubDate>Tue, 02 Dec 2025 01:11:37 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2025-12-02-0111/</guid><description>&lt;p>From the editorial:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Drafts</title><link>https://secminhr.github.io/secminhr/posts/</link><description>Recent content in Posts on Drafts</description><generator>Hugo -- 0.146.0</generator><language>zh-tw</language><lastBuildDate>Fri, 19 Dec 2025 01:28:10 +0800</lastBuildDate><atom:link href="https://secminhr.github.io/secminhr/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>DP (Dynamic Programming) as a refactoring of Recursion</title><link>https://secminhr.github.io/secminhr/posts/2025-12-19-0128/</link><pubDate>Fri, 19 Dec 2025 01:28:10 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2025-12-19-0128/</guid><description>&lt;p>想要記錄一下對於 DP 的想法，也很好奇這種看法能夠做到什麼程度。
+這篇文章會先說明如何將 recursion 轉換成 dp 的形式，並且使用 &lt;a href="https://leetcode.com/problems/partition-equal-subset-sum/description/">Leetcode 416&lt;/a> 和 &lt;a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v/description/?envType=daily-question&amp;amp;envId=2025-12-17">3573&lt;/a> 作為例子。&lt;/p>
+&lt;p>我們基本上會使用類似 Python 的 notation。&lt;/p>
+&lt;hr>
+&lt;h1 id="1-recursion---dp">1. Recursion -&amp;gt; DP&lt;/h1>
+&lt;p>這部分我們用最常見的費波那契數列當作例子。下面定義：
+&lt;/p>
+$$
+\begin{aligned}
+&amp;fib(n) = fib(n-1) + fib(n-2)\\
+&amp;fib(0) = 0\\
+&amp;fib(1) = 1
+\end{aligned}
+$$&lt;p>
+而程式可能會像這樣：&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">fib&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> n &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> n &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> fib(n&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> fib(n&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="recursion-組成">Recursion 組成&lt;/h2>
+&lt;p>一個遞迴通常由這些東西組成：&lt;/p></description></item><item><title>-h</title><link>https://secminhr.github.io/secminhr/posts/2025-12-19--h/</link><pubDate>Fri, 19 Dec 2025 01:27:15 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2025-12-19--h/</guid><description/></item><item><title>Validity of Binary Search in Leetcode 2141</title><link>https://secminhr.github.io/secminhr/posts/2025-12-02-0111/</link><pubDate>Tue, 02 Dec 2025 01:11:37 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2025-12-02-0111/</guid><description>&lt;p>From the editorial:&lt;/p>
 &lt;blockquote>
 &lt;p>We can freely use every battery except the largest 4 to increase the total running time. Because we can freely swap batteries in 0 time, all the extra power is interchangeable. We can take this extra power and &amp;ldquo;transfer&amp;rdquo; it to the batteries in live. Let extra be the sum of all the extra power.&lt;/p>&lt;/blockquote>
 &lt;p>It seems to me that it claims that the number of batteries in the &amp;ldquo;extra&amp;rdquo; part doesn&amp;rsquo;t matter, but how could 7 batteries with power 1 the same as 1 batteries with power 7?&lt;/p></description></item><item><title>Leetcode 3381 跟台</title><link>https://secminhr.github.io/secminhr/posts/2025-11-27-leetcode-3381-%E8%B7%9F%E5%8F%B0/</link><pubDate>Thu, 27 Nov 2025 23:20:26 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2025-11-27-leetcode-3381-%E8%B7%9F%E5%8F%B0/</guid><description>&lt;p>先記錄一下觀眾的提示：&lt;/p>
