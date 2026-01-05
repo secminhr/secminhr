@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Menu on Drafts</title><link>https://secminhr.github.io/secminhr/tags/menu/</link><description>Recent content in Menu on Drafts</description><generator>Hugo -- 0.146.0</generator><language>zh-tw</language><lastBuildDate>Mon, 05 Jan 2026 19:10:07 +0800</lastBuildDate><atom:link href="https://secminhr.github.io/secminhr/tags/menu/index.xml" rel="self" type="application/rss+xml"/><item><title>sec-contexts</title><link>https://secminhr.github.io/secminhr/posts/2026-01-05-1910/</link><pubDate>Mon, 05 Jan 2026 19:10:07 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2026-01-05-1910/</guid><description>&lt;ul>
+&lt;li>Leetcode 756. Pyramid Transition Matrix
+&lt;ul>
+&lt;li>try to keep pushing via the refactoring approach&lt;/li>
+&lt;li>PC: Recursive def of nextRow, and then make it iterative&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
