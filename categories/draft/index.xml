@@ -49,4 +49,7 @@
 &lt;li>​我們可以通過 j - i + 1 % k == 0 這個題目需求知道， i = 所有 5 mod j 餘數相同的值&lt;/li>
 &lt;li>​接著什麼樣是我們需要的？ Maximum sum 所以我們會希望找到所有 i 當中 prefix[i] 最小的&lt;/li>
 &lt;/ul>
-&lt;p>j - i + 1 % k == 0 應該是範圍 [i, j], 讓我們用 [i, j) 規定 i &amp;lt; j 看會不會簡單一點。&lt;/p></description></item><item><title>test draft</title><link>https://secminhr.github.io/secminhr/posts/2025-11-27-test-draft/</link><pubDate>Thu, 27 Nov 2025 21:32:34 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2025-11-27-test-draft/</guid><description>&lt;p>This is a test draft.&lt;/p></description></item></channel></rss>
+&lt;p>j - i + 1 % k == 0 應該是範圍 [i, j], 讓我們用 [i, j) 規定 i &amp;lt; j 看會不會簡單一點。&lt;/p></description></item><item><title>test draft</title><link>https://secminhr.github.io/secminhr/posts/2025-11-27-test-draft/</link><pubDate>Thu, 27 Nov 2025 21:32:34 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2025-11-27-test-draft/</guid><description>&lt;p>This is a test draft.&lt;/p>
+&lt;p>Testing typst formula.&lt;/p>
+&lt;div class="typst-block" style="display: flex; justify-content: center; margin: 1.5rem 0; overflow-x: auto;">&lt;img src="../../images/typst/5b05a49fc8465b443a120820b329d816.svg" alt="Typst Formula" style="max-width: 100%; height: auto;" loading="lazy">
+&lt;/div></description></item></channel></rss>
