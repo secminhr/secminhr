@@ -55,3 +55,16 @@
     margin-top: 5px;
 }
 */
+
+html[data-theme="dark"] .typst-block img {
+    /* 反轉顏色：白底黑字 -> 黑底白字 */
+    filter: invert(1) hue-rotate(180deg);
+    
+    /* 關鍵修正：讓黑色背景變透明，只留下白色的線條 */
+    /* lighten 模式會取兩層圖層中較亮的那一個顏色 */
+    /* 黑底(0) vs 網頁深灰(30) -> 顯示網頁深灰 (黑底消失) */
+    /* 白字(255) vs 網頁深灰(30) -> 顯示白字 */
+    mix-blend-mode: lighten;
+    
+    opacity: 0.9;
+}
