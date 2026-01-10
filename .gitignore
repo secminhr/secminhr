@@ -2,3 +2,4 @@
 draft
 !/content/categories/draft
 .hugo_build.lock
+/static/images/typst

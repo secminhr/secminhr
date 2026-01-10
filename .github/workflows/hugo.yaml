@@ -18,9 +18,20 @@ jobs:
           hugo-version: '0.146.0'
           extended: true
 
-      - name: Build
-        # Use -D to include drafts in the public output (公開所有內容)
-        run: hugo -D --minify
+      # 新增：安裝 Typst
+      - name: Install Typst
+        uses: typst-community/setup-typst@v3
+        with:
+           typst_version: "latest"
+
+      # 新增：安裝 Python (雖然 Ubuntu 內建，但宣告一下比較好)
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Build Site via Make
+        run: make build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

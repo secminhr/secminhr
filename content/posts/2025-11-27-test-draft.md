@@ -6,3 +6,17 @@ tags: ["test"]
 ---
 
 This is a test draft.
+
+Testing typst formula.
+```typst
+#import "@preview/curryst:0.6.0": rule, prooftree, rule-set
+#let tree = rule(
+  label: [Label],
+  name: [Rule name],
+  [Premise 1],
+  [Premise 2],
+  [Premise 3],
+  [Conclusion],
+)
+#prooftree(tree)
+```

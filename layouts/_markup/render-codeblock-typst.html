@@ -1,0 +1,12 @@
+{{- /* Typst Render Hook
+    職責：計算 Hash，並產生指向 static/images/typst 的連結
+*/ -}}
+{{- $content := trim .Inner "\n\r " -}}
+{{- $hash := md5 $content -}}
+{{- $imagePath := printf "../../images/typst/%s.svg" $hash -}}
+
+{{- /* 使用 figure 或簡單的 div 包裝 */ -}}
+<div class="typst-block" style="display: flex; justify-content: center; margin: 1.5rem 0; overflow-x: auto;">
+    {{- /* 這裡假設 Python 已經在背景把圖生好了 */ -}}
+    <img src="{{ $imagePath | safeURL }}" alt="Typst Formula" style="max-width: 100%; height: auto;" loading="lazy">
+</div>
