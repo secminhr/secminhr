@@ -5,4 +5,5 @@
 這麼一想，這或許是為什麼我們有時候會說 type class 跟 OOP 的 interface 有很像的感覺。
 我曾經認為這是同樣的東西在不同語言裡面叫不同名字而已，但是現在看來並非如此。
 更實際的情況可能是兩者在不同的系統中&lt;strong>都用來表示 type 的抽象&lt;/strong>而帶來的相似感。&lt;/p>
-&lt;p>&lt;em>- 當需要抽象 type 的時候，使用 type class&lt;/em>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;em>- 當需要抽象 type 的時候，使用 type class&lt;/em>&lt;/p></description></item><item><title>Haskell 和 DDD (Domain-Driven Design)</title><link>https://secminhr.github.io/secminhr/posts/2026-02-11-2138/</link><pubDate>Wed, 11 Feb 2026 21:38:55 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2026-02-11-2138/</guid><description>&lt;p>在和 AI 討論過後，發現 Haskell 開發的想法似乎跟 DDD 有一些暗合之處，例如他們對於 domain model 的重視。不過在我的認知中，DDD 似乎沒有流行過特別長的時間？（好像就是有一陣子特別夯）&lt;/p>
+&lt;p>實際上效果是如何果然還是得真的做做看才知道。&lt;/p></description></item></channel></rss>
