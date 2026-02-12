@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Haskell on Drafts</title><link>https://secminhr.github.io/secminhr/tags/haskell/</link><description>Recent content in Haskell on Drafts</description><generator>Hugo -- 0.146.0</generator><language>zh-tw</language><lastBuildDate>Thu, 12 Feb 2026 10:52:56 +0800</lastBuildDate><atom:link href="https://secminhr.github.io/secminhr/tags/haskell/index.xml" rel="self" type="application/rss+xml"/><item><title>Type class 與抽象</title><link>https://secminhr.github.io/secminhr/posts/2026-02-12-1052/</link><pubDate>Thu, 12 Feb 2026 10:52:56 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2026-02-12-1052/</guid><description>&lt;p>當我在學習 Type class 的時候，都知道他就是 a class of types 的意思。也就是說他其實是表示了一整個 type 家族（？）的 class （a family of types），因為他定義法中的 &lt;code>a&lt;/code> 已經指明了他是 polymorphic on types。因此，他是 type 的抽象。&lt;/p>
+&lt;p>但是真正在寫的時候，更重要的問題是「在什麼情況下要用 type class？」
+在這裡或許要反過來想：「當需要抽象 type 的時候，我們用 type class」&lt;/p>
+&lt;p>有趣的是，在 OOP 裡面這句話會變成「當需要抽象 type (或者說 class) 的時候，我們用 interface / abstract class」
+這麼一想，這或許是為什麼我們有時候會說 type class 跟 OOP 的 interface 有很像的感覺。
+我曾經認為這是同樣的東西在不同語言裡面叫不同名字而已，但是現在看來並非如此。
+更實際的情況可能是兩者在不同的系統中&lt;strong>都用來表示 type 的抽象&lt;/strong>而帶來的相似感。&lt;/p>
+&lt;p>&lt;em>- 當需要抽象 type 的時候，使用 type class&lt;/em>&lt;/p></description></item></channel></rss>
