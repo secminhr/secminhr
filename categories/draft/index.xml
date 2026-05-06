@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>草稿 on Drafts</title><link>https://secminhr.github.io/secminhr/categories/draft/</link><description>Recent content in 草稿 on Drafts</description><generator>Hugo -- 0.146.0</generator><language>zh-tw</language><lastBuildDate>Wed, 01 Apr 2026 21:43:23 +0800</lastBuildDate><atom:link href="https://secminhr.github.io/secminhr/categories/draft/index.xml" rel="self" type="application/rss+xml"/><item><title>Accessibility 的一點想法</title><link>https://secminhr.github.io/secminhr/posts/2026-04-01-2143/</link><pubDate>Wed, 01 Apr 2026 21:43:23 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2026-04-01-2143/</guid><description>&lt;p>最近碰到了一些和 accessibility 相關的事情，才特別去看相關的資源。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>草稿 on Drafts</title><link>https://secminhr.github.io/secminhr/categories/draft/</link><description>Recent content in 草稿 on Drafts</description><generator>Hugo -- 0.146.0</generator><language>zh-tw</language><lastBuildDate>Wed, 06 May 2026 20:38:48 +0800</lastBuildDate><atom:link href="https://secminhr.github.io/secminhr/categories/draft/index.xml" rel="self" type="application/rss+xml"/><item><title>關於測試：語意和語法</title><link>https://secminhr.github.io/secminhr/posts/2026-05-06-2038/</link><pubDate>Wed, 06 May 2026 20:38:48 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2026-05-06-2038/</guid><description>&lt;p>最近在看好心人送的二手書 Extreme Programming Explained: Embrace Change （中文版）。
+其中有一部分關於持續整合，是這樣寫的：&lt;/p>
+&lt;blockquote>
+&lt;p>&amp;hellip; 把所有的測試跑過一遍後，你也會知道語意上的衝突之處。&lt;/p>&lt;/blockquote>
+&lt;p>我從這部分感知到的重要訊息是：作者認為測試應當指向（表達）程式（應具備的）語意。&lt;/p>
+&lt;p>然而，我們同時也想要讓測試是自動化的，這使得測試實際上包含了兩個部分：語法和語意。&lt;/p>
+&lt;p>這裡的語法不僅僅包含「程式語言語法」，還包含了「介面設計」，因為介面也是形式（Form）的一部分，而語意不應該包含 Form（雖然需要將語意表達出來會需要特定的 Form，但是以語意的內涵來說應當是不需要的，吧）&lt;/p>
+&lt;p>這個函數應該要吃哪些參數呢？要用 return 的方式回傳資訊，還是使用 out parameter 的技巧？這個操作應當是一個 class 的 instance method 嗎？還是某個 top-level function？這些決策是技術上的決策，而且說不定不久之後我們就會改了（畢竟我們常常會搞錯事情），而並非程式的語意。&lt;/p>
+&lt;p>如果要希望這樣的介面設計不修改，那麼似乎最好要讓他們是「簡單到顯而易見的」。&lt;/p>
+&lt;p>從實際做法的角度來看，TDD 是完全混合的（或許我們應該在寫的時候把它分開？），而 BDD 似乎做得更好（或者說，更限制），將語意和語法切分成了 scenario 和 step 的轉換層兩個部分進行表達。&lt;/p>
+&lt;p>是否存在那樣的魔法，能讓我們獲得自動化測試的同時，測試中又僅僅只有語意呢？這似乎有點太美好了。&lt;/p>
+&lt;p>或許我們在期望的是某種魔法方法，能看著 BDD 的 scenario 和目前的 code，並幫我們完成 step 的轉換層？（寫到這裡我才突然發現，好像 LLM 很適合這個工作？）&lt;/p></description></item><item><title>Accessibility 的一點想法</title><link>https://secminhr.github.io/secminhr/posts/2026-04-01-2143/</link><pubDate>Wed, 01 Apr 2026 21:43:23 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2026-04-01-2143/</guid><description>&lt;p>最近碰到了一些和 accessibility 相關的事情，才特別去看相關的資源。&lt;/p>
 &lt;p>在視障方面，google 的 web.dev 在 &lt;a href="https://web.dev/articles/semantics-and-screen-readers">語意和螢幕閱讀器&lt;/a> 裡面是這樣說的（粗體是我認為重要的部分）：&lt;/p>
 &lt;blockquote>
 &lt;p>When we build graphical user interfaces, &lt;strong>we use CSS to add visual affordances&lt;/strong> to our interface. For example, you might give a button a drop shadow and border so that it resembles an actual button in the real world.&lt;/p>
