@@ -9,7 +9,7 @@
 &lt;p>如果要希望這樣的介面設計不修改，那麼似乎最好要讓他們是「簡單到顯而易見的」。&lt;/p>
 &lt;p>從實際做法的角度來看，TDD 是完全混合的（或許我們應該在寫的時候把它分開？），而 BDD 似乎做得更好（或者說，更限制），將語意和語法切分成了 scenario 和 step 的轉換層兩個部分進行表達。&lt;/p>
 &lt;p>是否存在那樣的魔法，能讓我們獲得自動化測試的同時，測試中又僅僅只有語意呢？這似乎有點太美好了。&lt;/p>
-&lt;p>或許我們在期望的是某種魔法方法，能看著 BDD 的 scenario 和目前的 code，並幫我們完成 step 的轉換層？（寫到這裡我才突然發現，好像 LLM 很適合這個工作？）&lt;/p></description></item><item><title>Accessibility 的一點想法</title><link>https://secminhr.github.io/secminhr/posts/2026-04-01-2143/</link><pubDate>Wed, 01 Apr 2026 21:43:23 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2026-04-01-2143/</guid><description>&lt;p>最近碰到了一些和 accessibility 相關的事情，才特別去看相關的資源。&lt;/p>
+&lt;p>或許我們在期望的是某種魔法方法，能看著 BDD 的 scenario 和目前的 code，並幫我們完成 step 的轉換層？（寫到這裡我才突然發現，好像 LLM 很適合這個工作？當然，如果那樣做了，便不得不考慮轉換的正確性問題）&lt;/p></description></item><item><title>Accessibility 的一點想法</title><link>https://secminhr.github.io/secminhr/posts/2026-04-01-2143/</link><pubDate>Wed, 01 Apr 2026 21:43:23 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2026-04-01-2143/</guid><description>&lt;p>最近碰到了一些和 accessibility 相關的事情，才特別去看相關的資源。&lt;/p>
 &lt;p>在視障方面，google 的 web.dev 在 &lt;a href="https://web.dev/articles/semantics-and-screen-readers">語意和螢幕閱讀器&lt;/a> 裡面是這樣說的（粗體是我認為重要的部分）：&lt;/p>
 &lt;blockquote>
 &lt;p>When we build graphical user interfaces, &lt;strong>we use CSS to add visual affordances&lt;/strong> to our interface. For example, you might give a button a drop shadow and border so that it resembles an actual button in the real world.&lt;/p>
