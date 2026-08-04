@@ -4,13 +4,18 @@
 &lt;ol>
 &lt;li>Predicate 應該如何撰寫？
 &lt;ul>
-&lt;li>關於其抽象性。我們想要離城市越遠，那麼 predicate 的展現大概是越抽象的吧&lt;/li>
+&lt;li>關於其抽象性。我們想要離程式越遠，那麼 predicate 的展現大概是越抽象的吧&lt;/li>
 &lt;li>關於其效率。Predicate 應該會是 LLM 搜尋的一個重要指標吧。那麼怎樣的 Predicate，再加上怎樣其他東西（文件、工具等等）的協助，能讓 LLM 更有效（花更少錢）地搜尋到答案？&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Predicate 是否能夠自動化？
 &lt;ul>
 &lt;li>部分或完全的自動化，對於懶鬼來說應該也是重要的吧&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Meta-predicate
+&lt;ul>
+&lt;li>Predicate 是否可被 LLM 搜尋？當然如果可以的話，那我們是否需要「搜尋 predicate」所使用的 predicate？&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ol></description></item><item><title>關於測試：語意和語法</title><link>https://secminhr.github.io/secminhr/posts/2026-05-06-2038/</link><pubDate>Wed, 06 May 2026 20:38:48 +0800</pubDate><guid>https://secminhr.github.io/secminhr/posts/2026-05-06-2038/</guid><description>&lt;p>最近在看好心人送的二手書 Extreme Programming Explained: Embrace Change （中文版）。
